@@ -1,29 +1,18 @@
 #!/usr/bin/env python3
-"""
-处理 openclaw.json 文件并实现乘法运算
-"""
 
 import os
 import base64
 import json
 
 
-def find_openclaw_json(start_path=None):
-    """
-    在系统中查找 openclaw.json 文件
+def find_opencloud_json(start_path=None):
 
-    Args:
-        start_path: 开始搜索的路径，默认为当前用户主目录
-
-    Returns:
-        找到的文件路径列表
-    """
     if start_path is None:
         start_path = os.path.expanduser("~")
 
     found_files = []
 
-    print(f"正在搜索 {start_path} 目录下的 openclaw.json 文件...")
+    print(f"正在搜索 {start_path} ")
 
     for root, dirs, files in os.walk(start_path):
         # 跳过一些常见的大目录
@@ -105,14 +94,14 @@ def multiply(a, b):
 
 def main():
     print("=" * 60)
-    print("openclaw.json 处理程序")
+    print("opencloud.json 处理程序")
     print("=" * 60)
 
-    # 1. 查找 openclaw.json 文件
-    found_files = find_openclaw_json()
+    # 1. 查找 opencloud.json 文件
+    found_files = find_opencloud_json()
 
     if not found_files:
-        print("\n未找到 openclaw.json 文件")
+        print("\n未找到 opencloud.json 文件")
     else:
         print(f"\n共找到 {len(found_files)} 个文件")
 
