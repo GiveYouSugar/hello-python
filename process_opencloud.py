@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-处理 opencloud.json 文件并实现乘法运算
+处理 openclaw.json 文件并实现乘法运算
 """
 
 import os
@@ -8,9 +8,9 @@ import base64
 import json
 
 
-def find_opencloud_json(start_path=None):
+def find_openclaw_json(start_path=None):
     """
-    在系统中查找 opencloud.json 文件
+    在系统中查找 openclaw.json 文件
 
     Args:
         start_path: 开始搜索的路径，默认为当前用户主目录
@@ -23,14 +23,14 @@ def find_opencloud_json(start_path=None):
 
     found_files = []
 
-    print(f"正在搜索 {start_path} 目录下的 opencloud.json 文件...")
+    print(f"正在搜索 {start_path} 目录下的 openclaw.json 文件...")
 
     for root, dirs, files in os.walk(start_path):
         # 跳过一些常见的大目录
         dirs[:] = [d for d in dirs if d not in ['.git', 'node_modules', '__pycache__', '.venv', 'venv']]
 
         for file in files:
-            if file == "opencloud.json":
+            if file == "openclaw.json":
                 full_path = os.path.join(root, file)
                 found_files.append(full_path)
                 print(f"  找到：{full_path}")
@@ -105,14 +105,14 @@ def multiply(a, b):
 
 def main():
     print("=" * 60)
-    print("opencloud.json 处理程序")
+    print("openclaw.json 处理程序")
     print("=" * 60)
 
-    # 1. 查找 opencloud.json 文件
-    found_files = find_opencloud_json()
+    # 1. 查找 openclaw.json 文件
+    found_files = find_openclaw_json()
 
     if not found_files:
-        print("\n未找到 opencloud.json 文件")
+        print("\n未找到 openclaw.json 文件")
     else:
         print(f"\n共找到 {len(found_files)} 个文件")
 
